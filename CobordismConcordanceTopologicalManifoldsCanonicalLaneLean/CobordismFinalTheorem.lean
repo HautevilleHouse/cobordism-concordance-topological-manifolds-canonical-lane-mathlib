@@ -1,0 +1,17 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.CobordismConcordanceTopologicalManifoldsCanonicalLaneLean.CobordismCategory
+import HautevilleHouse.CobordismConcordanceTopologicalManifoldsCanonicalLaneLean.CobordismRing
+import HautevilleHouse.CobordismConcordanceTopologicalManifoldsCanonicalLaneLean.CobordismClassification
+import HautevilleHouse.CobordismConcordanceTopologicalManifoldsCanonicalLaneLean.ConcordanceInvariance
+
+namespace HautevilleHouse
+namespace CobordismConcordanceTopologicalManifoldsCanonicalLaneLean
+
+def ConstrainedCobordismClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_cobordism_endgame (A : AdmissibleClass) : ConstrainedCobordismClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end CobordismConcordanceTopologicalManifoldsCanonicalLaneLean
+end HautevilleHouse
